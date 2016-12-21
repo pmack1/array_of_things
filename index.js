@@ -131,7 +131,7 @@ var nodes = new Array();
 function createNodes(){
   $.ajax({
     type: 'GET',
-    url: "http://plenar.io/v1/api/sensor-networks/plenario_development/nodes/",
+    url: "https://plenar.io/v1/api/sensor-networks/plenario_development/nodes/",
     async: false,
     dataType: 'json',
     success: function (data) {
@@ -150,7 +150,7 @@ function createNodes(){
       sensor_string = node.sensors[j].toString()
       if (!(i == 1 & j==1)) {
 
-      url_string = "http://plenar.io/v1/api/sensor-networks/plenario_development/sensors/" + sensor_string
+      url_string = "https://plenar.io/v1/api/sensor-networks/plenario_development/sensors/" + sensor_string
       $.ajax({
         type: 'GET',
         url: url_string,
@@ -277,7 +277,7 @@ document.getElementById("deleteRoute").onclick = function () {
       var property_string = featureProperties_string.split(".")[1];
       console.log(featureProperties_string);
       if (nodes[i].featureProperties.includes(featureProperties_string)){
-      var request_url =  "http://plenar.io/v1/api/sensor-networks/plenario_development/query?feature=" + feature_string + "&nodes=" + node_name_string + "&limit=100&start_datetime=" + start_string + "&end_datetime=" + end_string;
+      var request_url =  "https://plenar.io/v1/api/sensor-networks/plenario_development/query?feature=" + feature_string + "&nodes=" + node_name_string + "&limit=100&start_datetime=" + start_string + "&end_datetime=" + end_string;
       $.ajax({
         type: 'GET',
         url: request_url,
